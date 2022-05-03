@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Crazy Square</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A crazy square.">
+<meta name="keywords" content="Programming, Biography, Personal, Python, JavaScript, TBAISD">
+<link rel="stylesheet" href="css/index.css" media="all">
+<link rel="stylesheet" href="css/print.css" media="print">
+<!-- Font Awesome 4-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="page">
+<header class="pageheader">
+    <h1>Alexander Raptis' Personal Website</h1>
+</header>
+<nav class="navbar">
+    <button class="toggle" onclick="toggleNav()">Menu</button>
+    <ul class="menubar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="interests.html">Interests</a></li>
+        <li><a href="skills.html">Experience</a></li>
+        <li><a href="#">Crazy Square</a></li>
+    </ul>
+</nav>
+<article class="pagemain">
+<section>
+    <h2>Crazy Square</h2>
+    <div class="box">
+        <canvas id="balls" width="640" height="480"></canvas>
+        <p id="warn">Can't display on mobile devices or small windows.</p>
+    </div>
+</section>
+</article>
+<footer class="pagefooter">
+    <div class="icon-bar">
+        <a href="https://github.com/raptalex"><i class="fa fa-github"></i></a>
+    </div>
+    <p id="copyright">
+        &copy; Alexander Raptis
+        2022&nbsp;<sup><a href="mailto:raptisa@mail.nmc.edu">Send Me an Email!</a></sup>
+        <br>
+    </p>
+</footer>
+</div>
+<!-- Page script -->
+<script src="js/page.js"></script>
+<script src="js/crazy.js"></script>
+<noscript>JavaScript not enabled!</noscript>
+</body>
+</html>

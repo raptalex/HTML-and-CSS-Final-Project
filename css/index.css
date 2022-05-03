@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap');
+* { box-sizing: border-box; }
+body {
+    font-family: 'Radio Canada', sans-serif;
+    background: rgb(133, 133, 133);
+    margin: 0;
+}
+h1 {
+    /* Neat rainbow animation for title */
+    color: rgb(255, 0, 0);
+    animation: rainbow 3s ease-in-out infinite;
+    background-size: 800% 100%;
+    text-shadow: 2px 2px rgba(0,0,0,0.65);
+    font-family: 'Radio Canada', sans-serif;
+}
+h2 {
+    color: rgb(49, 71, 190);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+a:link {
+    color: rgb(7, 7, 223);
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(245, 201, 57);
+}
+a:active {
+    color: #17179e;
+}
+a:focus {
+    color: #21219c;
+}
+a:visited {
+    color: rgb(25, 136, 25);
+}
+.pageheader {
+    grid-area: h;
+    margin: 10px;
+}
+.pagefooter {
+    grid-area: f;
+}
+.navbar {
+    grid-area: m;
+}
+.pagemain {
+    grid-area: c;
+    background: linear-gradient(0deg, rgb(146, 146, 146),
+    rgb(160, 160, 160),
+    rgb(146, 146, 146));
+    /*rgb(151, 151, 151);*/
+    /*#4C54E0;*/
+    padding: 10px;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 4px inset,
+    rgba(0,0,0,0.5) 0px 0px 4px;
+    /*border-radius: 0 0 15px 15px;*/
+    margin-bottom: 15px;
+}
+.toggle {
+    padding: 30px 34px;
+    background: rgb(146, 146, 146);
+    color: #000;
+    text-align: center;
+    font-size: 24pt;
+    border: none;
+    border-bottom: 4px solid #363feb;
+    width: 100%;
+    user-select: none;
+    /*border-radius: 15px 15px 0 0;*/
+}
+.pagemain section {
+    margin: 10px;
+}
+.textbox {
+    /*background: linear-gradient(0deg, lightgrey, rgb(146, 146, 146));*/
+    /*box-shadow: #000 0px 0px 5px inset;*/
+    border-radius: 10px;
+    word-wrap: break-word;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 128px;
+    padding: 4px;
+    font-size: 14pt;
+    /*border-radius: 10px;*/
+}
+.menubar {
+    list-style-type: none;
+    margin: 0; padding: 10px;
+    overflow: hidden;
+    background: rgb(164,164,164); /*#f17033;*/
+    display: flex;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 4px;
+}
+.menubar li {
+    flex: 1;
+}
+.menubar li a {
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+    user-select: none;
+    /*text-shadow: 1px 1px 5px #000;*/
+}
+.menubar li a:hover,
+.menubar li a:active {
+    color: white;
+    /*#ca4a0f;*/
+    /*border-radius: 10px;*/
+}
+.icon-bar {
+    width: 128px;
+    margin: 0 auto; /* Center */
+    overflow: auto; /* Overflow due to float */
+}
+.icon-bar a {
+    float: left;
+    text-align: center;
+    width: 100%;
+    padding: 12px 0;
+    color: white;
+    font-size: 24pt;
+    background: linear-gradient(to bottom, rgb(56, 89, 236), #262db9);
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.5) 0 0 10px inset;
+}
+.icon-bar a:hover {
+    background: linear-gradient(to bottom, rgb(83, 202, 35), rgb(39, 139, 30)); /* Add a hover color */
+}
+.box figure img {
+    background-color: #fff;
+}
+#copyright {
+    color:rgb(221, 221, 221);
+    text-shadow: 1px 1px 3px rgb(0,0,0,0.75);
+    /*letter-spacing: 1px;*/
+    margin: 10px;
+    text-align: center;
+}
+@keyframes rainbow {
+    0%, 100% {
+        color: #f00;
+    }
+    50% {
+        color: #ff0;
+    }
+}
+/* For mobile phones: */
+@media only screen and (max-width: 480px) {
+    .page {
+		display:grid;
+		grid-template-areas:
+			'h h h'
+            'm m m'
+			'c c c'
+			'f f f';
+        gap: 0;
+	}
+    h1, h2 {
+        text-align: center;
+    }
+    .menubar {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+        background: linear-gradient(0deg, rgb(146, 146, 146),
+        rgb(192, 192, 192),
+        rgb(146, 146, 146));
+    }
+    .menubar li a {
+        border-radius: 0;
+    }
+    .menubar li a:hover,
+    .menubar li a:active {
+        background: #363feb;
+        border-radius: 0;
+    }
+    .toggle {
+        background: linear-gradient(0deg, rgb(146, 146, 146),
+        rgb(192, 192, 192),
+        rgb(146, 146, 146));
+        display: block;
+    }
+    .navbar {
+        position:sticky;
+        top: 0;
+    }
+    .box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-items: center;
+    }
+    .box figure {
+        /*float: left;*/
+        flex: 1;
+        margin: 0; padding: 0;
+    }
+    .box figure img {
+        max-width: 350px;
+        min-width: 100px;
+        border: 4px solid rgb(12, 70, 146);
+    }
+    .box figure figcaption {
+        text-align: center;
+        text-decoration: underline;
+    }
+    .box canvas {
+        display: none;
+    }
+    #warn {
+        display: block;
+        text-align: center;
+    }
+}
+/* For tablets: */
+@media only screen and (min-width:481px) {
+	.page {
+		display:grid;
+		grid-template-areas:
+			'h h h'
+            'm m m'
+			'c c c'
+			'f f f';
+		gap: 0;
+	}
+    h1 {
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+    }
+    .menubar {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+        background: linear-gradient(0deg, rgb(146, 146, 146),
+        rgb(192, 192, 192),
+        rgb(146, 146, 146));
+    }
+    .menubar li a {
+        border-radius: 0;
+    }
+    .menubar li a:hover,
+    .menubar li a:active {
+        background: #363feb;
+        border-radius: 0;
+    }
+    .toggle {
+        background: linear-gradient(0deg, rgb(146, 146, 146),
+        rgb(192, 192, 192),
+        rgb(146, 146, 146));
+        display: block;
+    }
+    .navbar {
+        position: sticky;
+        top: 0;
+    }
+    .box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-items: center;
+    }
+    .box figure {
+        /*float: left;*/
+        flex: 1;
+        margin: 0; padding: 0;
+    }
+    .box figure img {
+        max-width: 350px;
+        min-width: 100px;
+        border: 4px solid rgb(12, 70, 146);
+    }
+    .box figure figcaption {
+        text-align: center;
+        text-decoration: underline;
+    }
+    .box canvas {
+        display: none;
+    }
+    #warn {
+        display: block;
+        text-align: center;
+    }
+}
+/* For desktop: */
+@media only screen and (min-width: 769px) {
+	.page {
+		display:grid;
+		grid-template-areas:
+			'h h h h h h'
+			'm m m m m m'
+			'c c c c c c'
+			'c c c c c c'
+			'f f f f f f';
+		gap: 0;
+	}
+    h1 {
+        text-align: left;
+    }
+    h2 {
+        text-align: center;
+    }
+    .menubar {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 10px;
+        background: linear-gradient(0deg, rgb(146, 146, 146),
+        rgb(192, 192, 192),
+        rgb(146, 146, 146));
+        /*border-radius: 15px 15px 0 0;*/
+        gap: 0;
+    }
+    .menubar li {
+        max-width: 180px;
+        max-height: 64px;
+    }
+    .menubar li a {
+        margin-right: 5px;
+        max-width: 150px;
+        /*border-radius: 10px;*/
+        max-height: 64px;
+    }
+    .menubar li a:hover,
+    .menubar li a:active {
+        background: linear-gradient(to bottom, rgb(56, 89, 236), #262db9);
+        box-shadow: rgba(0,0,0,0.5) 0 0 10px inset;
+        border-radius: 4px;
+    }
+    .toggle {
+        display: none;
+    }
+    .navbar {
+        position: sticky;
+        top: 0;
+    }
+    .box {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-items: center;
+        width: 78%;
+        margin: 0 auto;
+    }
+    .box figure {
+        /*float: left;*/
+        flex: 1;
+        margin: 0; padding: 0;
+    }
+    .box figure img {
+        max-width: 350px;
+        min-width: 100px;
+        border: 4px solid rgb(12, 70, 146);
+    }
+    .box figure figcaption {
+        text-align: center;
+        text-decoration: underline;
+    }
+    .box canvas {
+        display: block;
+        width: 640px;
+        height: 480px;
+        margin: 0 auto;
+        background: #fff;
+        outline: 4px solid rgb(12, 70, 146);
+    }
+    #warn {
+        display: none;
+    }
+}

@@ -1,0 +1,98 @@
+* {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: #000;
+    user-select: all;
+    font-size: 12pt;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block;
+    font-family: sans-serif;
+    width: 100% !important;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    font-size: 12pt;
+    margin: 0; padding: 0;
+}
+
+/* Printing does not require scripts not navigation */
+script {display: none;}
+nav {display: none;}
+img {display: none;}
+canvas {display: none;}
+
+#copyright,
+h1,h2,h3,
+p, .box,
+.textbox {
+    text-shadow: none;
+    color: #000 !important;
+    letter-spacing: normal;
+    text-decoration: none;
+    text-align: left;
+    font-size: 12pt;
+    display: block;
+    padding: 0; margin: 0;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    filter: none;
+    background: #fff;
+}
+
+.icon-bar {
+    display: none;
+}
+
+.pagemain {
+    box-shadow: none;
+}
+
+.pagemain section {
+    margin: 0; padding: 0;
+    color: #000;
+    background: #000;
+}
+
+figure {
+    display: none;
+}
+
+a {
+    color: #000;
+    text-shadow: none;
+    text-decoration: underline;
+    font-size: 12pt;
+    margin: 0; padding: 0;
+    display: block;
+}
+
+a:link, a:hover,
+a:focus, a:visited,
+a:active {
+    color: #000;
+    text-shadow: none;
+    text-decoration: underline;
+    font-size: 12pt;
+    margin: 0; padding: 0;
+    display: block;
+}
+
+/* Grid layout for printing */
+@media only print {
+	.container{
+		display:grid;
+		grid-template-areas:
+			'h h h'
+			'c c c'
+			'f f f';
+		grid-gap: 0;
+	}
+    #warn {
+        display: none;
+    }
+}
